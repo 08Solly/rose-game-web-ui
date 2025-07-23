@@ -196,3 +196,41 @@ body {
 .error-text {
     color: red;
 }
+
+
+
+#switch-maps-button{
+    display: block;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+    border: 1px solid #34495e;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: background-color 0.2s;
+}
+
+#upload-file-button{
+    display: block;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+    border: 1px solid #34495e;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: background-color 0.2s;
+}
+
+#file-input{
+    display: block;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+    border: 1px solid #34495e;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: background-color 0.2s;
+}

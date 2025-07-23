@@ -7,8 +7,7 @@ function uploadFile() {
         return;
     }
 
-    // Check file extension or MIME type
-    const allowedTypes = ['text/csv', 'application/vnd.ms-excel']; // common CSV MIME types
+    const allowedTypes = ['text/csv', 'application/vnd.ms-excel']; // CSV types
     const fileExtension = file.name.split('.').pop().toLowerCase();
 
     if (fileExtension !== 'csv' && !allowedTypes.includes(file.type)) {
@@ -28,5 +27,39 @@ function uploadFile() {
     .catch(err => {
         console.error(err);
         alert("Upload failed");
+    });
+}
+
+const switchMapsButton = document.getElementById('switch-maps-button');
+let isRequestInProgress = false;
+let currentlyActivate = true; 
+
+function activateRandomMap() {
+    console.log(currentlyActivate);
+
+    if (isRequestInProgress) return;
+
+    isRequestInProgress = true;
+    const url = currentlyActivate
+        ? 'http://localhost:8000/activateRandomMap'
+        : 'http://localhost:8000/deactivateRandomMap';
+
+
+    switchMapsButton.innerText = currentlyActivate? 'Switch to random map' : 'Switch to custom map';
+
+
+    fetch(url, {
+        method: 'POST'
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("after chaneg: " + currentlyActivate);
+        currentlyActivate = !currentlyActivate; // Flip state only on success
+    })
+    .catch(err => {
+        console.error(err);
+    })
+    .finally(() => {
+        isRequestInProgress = false;
     });
 }

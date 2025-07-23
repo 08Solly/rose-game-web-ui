@@ -8,10 +8,10 @@
   </head>
 
   <body>
-    <script src="customMapLoader.js"></script>
     <div id="content">
-    <input type="file" id="fileInput" accept=".csv">
-    <button onclick="uploadFile()">Upload</button>
+    <input type="file" id="fileInput" id="file-input" accept=".csv">
+    <button onclick="uploadFile()" id="upload-file-button">Upload</button>
+    <button onclick="activateRandomMap()" id="switch-maps-button">Switch to random map</button>
       <a href="settings/index.html" id="settings-link">Settings</a>
       <a href="#" id="info-btn">Info</a>
 
@@ -19,6 +19,8 @@
           <h2>Game Information</h2>
           <span id="info-text"></span>
       </div>
+
+      <script src="customMapLoader.js"></script>
 
       <form id="control">
 
