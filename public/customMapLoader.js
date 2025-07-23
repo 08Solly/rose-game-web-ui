@@ -7,6 +7,15 @@ function uploadFile() {
         return;
     }
 
+    // Check file extension or MIME type
+    const allowedTypes = ['text/csv', 'application/vnd.ms-excel']; // common CSV MIME types
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+
+    if (fileExtension !== 'csv' && !allowedTypes.includes(file.type)) {
+        alert('Please upload a valid CSV file.');
+        return;
+    }
+
     const formData = new FormData();
     formData.append('file', file);
 
