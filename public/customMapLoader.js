@@ -34,6 +34,7 @@ const switchMapsButton = document.getElementById('switch-maps-button');
 let isRequestInProgress = false;
 let currentlyActivate = true; 
 
+
 function activateRandomMap() {
     console.log(currentlyActivate);
 
